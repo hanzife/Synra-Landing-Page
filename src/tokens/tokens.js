@@ -8,8 +8,8 @@ export const colors = {
 }
 
 export const fonts = {
-  display: "'Syne', sans-serif",
-  body: "'DM Sans', sans-serif",
+  display: "'inter'",
+  body: "'DM Sans'",
 }
 
 export const radius = {
