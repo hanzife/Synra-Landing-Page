@@ -84,7 +84,6 @@ export default function Hero() {
                 zIndex: 1,
             }}>
 
-                {/* Left */}
                 <div style={{ flex: "0 0 auto", maxWidth: "520px" }}>
 
                     <h1 style={{
@@ -120,7 +119,6 @@ export default function Hero() {
                         actually talk to.
                     </p>
 
-                    {/* CTAs */}
                     <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
                         <a href="#download"
                             style={{
@@ -141,7 +139,6 @@ export default function Hero() {
                             onMouseEnter={e => { e.currentTarget.style.transform = "scale(1.04)"; e.currentTarget.style.boxShadow = "0 8px 28px rgba(84,53,208,0.45)" }}
                             onMouseLeave={e => { e.currentTarget.style.transform = "scale(1)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(84,53,208,0.35)" }}
                         >
-                            {/* Apple logo */}
                             <svg width="15" height="17" viewBox="0 0 15 17" fill="none">
                                 <path d="M12.5 8.8C12.5 7.3 13.3 6.1 15 5.4C14.1 4.1 12.7 3.4 11.1 3.3C9.6 3.2 8.2 4.1 7.4 4.1C6.7 4.1 5.4 3.3 4.1 3.3C2.2 3.4 0 4.8 0 7.9C0 11 2.3 14.6 4.2 14.6C5.1 14.6 5.9 14 7.2 14C8.5 14 9.2 14.6 10.3 14.6C12.3 14.6 14.3 11 14.8 9.2C13.2 8.4 12.5 8.8 12.5 8.8ZM9.8 1.8C10.5 1 10.9 0 10.7 -0.9C9.9 -0.8 8.8 -0.3 8.1 0.5C7.4 1.2 6.9 2.3 7.1 3.1C8 3.1 9.1 2.6 9.8 1.8Z" fill="white" transform="translate(0, 1.5)" />
                             </svg>
@@ -182,7 +179,6 @@ export default function Hero() {
                     </p>
                 </div>
 
-                {/* Right: Phone */}
                 <div style={{ flex: "0 0 auto", display: "flex", justifyContent: "center" }}>
                     <div
                         ref={phoneRef}
@@ -207,7 +203,6 @@ export default function Hero() {
 
             </div>
 
-            {/* Keyframes */}
             <style>{`
         @keyframes pulse {
           0%, 100% { opacity: 1; transform: scale(1); }
