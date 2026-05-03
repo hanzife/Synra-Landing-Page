@@ -9,7 +9,7 @@ export const colors = {
 
 export const fonts = {
   display: "'inter'",
-  body: "'DM Sans'",
+  body: "'inter'",
 }
 
 export const radius = {
