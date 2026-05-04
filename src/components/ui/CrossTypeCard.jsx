@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react"
-import { fonts } from "../../tokens/tokens"
+import { fonts, fontSizes, fontWeights } from "../../tokens/tokens"
 import runningImage from "../../assets/images/running.png"
+import StravaArticle from "../../assets/images/strava-article.png"
+import { body } from "framer-motion/client"
 
 export default function CrossTypeCard() {
   const [hovered, setHovered] = useState(false)
@@ -53,7 +55,7 @@ export default function CrossTypeCard() {
           justifyContent: "center",
         }}
       >
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M4.24935 7.08335C5.0008 7.08335 5.72147 6.78484 6.25282 6.25349C6.78417 5.72214 7.08268 5.00147 7.08268 4.25002C7.08268 3.49857 6.78417 2.7779 6.25282 2.24655C5.72147 1.7152 5.0008 1.41669 4.24935 1.41669C3.4979 1.41669 2.77723 1.7152 2.24588 2.24655C1.71453 2.7779 1.41602 3.49857 1.41602 4.25002C1.41602 5.00147 1.71453 5.72214 2.24588 6.25349C2.77723 6.78484 3.4979 7.08335 4.24935 7.08335ZM5.66602 28.3334C6.79319 28.3334 7.87419 27.8856 8.67122 27.0886C9.46825 26.2915 9.91602 25.2105 9.91602 24.0834C9.91602 22.9562 9.46825 21.8752 8.67122 21.0781C7.87419 20.2811 6.79319 19.8334 5.66602 19.8334C4.53885 19.8334 3.45784 20.2811 2.66081 21.0781C1.86378 21.8752 1.41602 22.9562 1.41602 24.0834C1.41602 25.2105 1.86378 26.2915 2.66081 27.0886C3.45784 27.8856 4.53885 28.3334 5.66602 28.3334ZM25.4993 29.75C26.6265 29.75 27.7075 29.3023 28.5046 28.5052C29.3016 27.7082 29.7493 26.6272 29.7493 25.5C29.7493 24.3728 29.3016 23.2918 28.5046 22.4948C27.7075 21.6978 26.6265 21.25 25.4993 21.25C24.3722 21.25 23.2912 21.6978 22.4941 22.4948C21.6971 23.2918 21.2493 24.3728 21.2493 25.5C21.2493 26.6272 21.6971 27.7082 22.4941 28.5052C23.2912 29.3023 24.3722 29.75 25.4993 29.75ZM14.166 18.4167C15.6689 18.4167 17.1102 17.8197 18.173 16.757C19.2357 15.6943 19.8327 14.2529 19.8327 12.75C19.8327 11.2471 19.2357 9.80579 18.173 8.74308C17.1102 7.68038 15.6689 7.08335 14.166 7.08335C12.6631 7.08335 11.2218 7.68038 10.1591 8.74308C9.09637 9.80579 8.49935 11.2471 8.49935 12.75C8.49935 14.2529 9.09637 15.6943 10.1591 16.757C11.2218 17.8197 12.6631 18.4167 14.166 18.4167ZM22.666 7.08335C23.4175 7.08335 24.1381 6.78484 24.6695 6.25349C25.2008 5.72214 25.4993 5.00147 25.4993 4.25002C25.4993 3.49857 25.2008 2.7779 24.6695 2.24655C24.1381 1.7152 23.4175 1.41669 22.666 1.41669C21.9146 1.41669 21.1939 1.7152 20.6625 2.24655C20.1312 2.7779 19.8327 3.49857 19.8327 4.25002C19.8327 5.00147 20.1312 5.72214 20.6625 6.25349C21.1939 6.78484 21.9146 7.08335 22.666 7.08335Z" fill="#FE9B4E" stroke="#FE9B4E" stroke-width="2.83333" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M6.37305 6.37506L9.20638 9.20839ZM19.8314 7.08339L18.4147 8.50006ZM22.6647 22.3126L18.4147 17.0001ZM8.49805 20.5417L11.3314 17.7084Z" fill="#FE9B4E" />
           <path d="M6.37305 6.37506L9.20638 9.20839M19.8314 7.08339L18.4147 8.50006M22.6647 22.3126L18.4147 17.0001M8.49805 20.5417L11.3314 17.7084" stroke="#FE9B4E" stroke-width="2.83333" stroke-linecap="round" stroke-linejoin="round" />
@@ -76,7 +78,8 @@ export default function CrossTypeCard() {
       <p
         style={{
           fontFamily: fonts.body,
-          fontSize: "14px",
+          maxWidth: "340px",
+          fontSize: fontSizes.sm,
           lineHeight: 1.6,
           color: "#2D3B6B",
           margin: 0,
@@ -88,15 +91,11 @@ export default function CrossTypeCard() {
 
       <div
         style={{
-          marginTop: "auto",
-          borderRadius: "16px",
-          background: "#EEF2FF",
-          padding: "20px 16px",
+          margin: "auto",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
           gap: "6px",
-          overflow: "hidden",
         }}
       >
 
@@ -128,9 +127,73 @@ export default function CrossTypeCard() {
 
         <Arrow delay={400} visible={visible} />
 
-        <ItemCard delay={480} visible={visible} hovered={hovered} bg="#F0FDF4">
-          <div style={{ transform: 'scale(0.7)' }}><DocIllustration /></div>
-          <Label>Article</Label>
+
+
+        <ItemCard delay={480} visible={visible} hovered={hovered} bg="#FFFFFF">
+          <div style={{
+            width: "100%",
+            height: "88px",
+            borderRadius: "6px", 
+            backgroundImage: `url(${StravaArticle})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            position: "relative",
+            overflow: "hidden"
+          }}>
+            <div style={{
+              position: "absolute",
+              top: "10px",
+              left: "10px",
+              backgroundColor: "#FFFFFF",
+              borderRadius: "12px",
+              padding: "6px 14px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.08)"
+            }}>
+              <span style={{
+                color: "#FC5200",
+                fontWeight: 800,
+                fontSize: "11px",
+                fontFamily: fonts.body,
+                letterSpacing: "0.02em"
+              }}>
+                STRAVA
+              </span>
+            </div>
+          </div>
+
+          {/* Text Content - Aligned Left with Ellipsis */}
+          <div style={{
+            textAlign: "left",
+            width: "100%",
+            overflow: "hidden"
+          }}>
+            <h4 style={{
+              fontFamily: fonts.body,
+              fontSize: fontSizes.sm,
+              fontWeight: fontWeights.bold,
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis"
+            }}>
+              Want to Progress? Don’t Overlook the Recovery
+            </h4>
+
+            <p style={{
+              fontFamily: fonts.body,
+              fontSize: "10px",
+              fontWeight: 500,
+              color: "#5435D0",
+              margin: 0,
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis"
+            }}>
+              stories.strava.com
+            </p>
+          </div>
         </ItemCard>
       </div>
     </div>

@@ -12,6 +12,23 @@ export const fonts = {
   body: "'inter'",
 }
 
+export const fontSizes = {
+  xs: "12px",   
+  sm: "14px",   
+  base: "16px", 
+  md: "18px",   
+  lg: "24px",   
+  xl: "32px",    
+  xxl: "48px",   
+}
+
+export const fontWeights = {
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+}
+
 export const radius = {
   sm: "8px",
   md: "12px",

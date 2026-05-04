@@ -6,21 +6,21 @@ const SEARCHES = [
     query: "cortisol crash",
     results: [
       { type: "voice", label: "Voice note", meta: "from 3 days ago", color: "#5435D0" },
-      { type: "text",  label: "Photo of empty coffee cup", meta: "", color: "#010312" },
+      { type: "text", label: "Photo of empty coffee cup", meta: "", color: "#010312" },
     ],
   },
   {
-    query: "what did I save about staying focused?",
+    query: "staying focused?",
     results: [
-      { type: "note",  label: "Deep work session notes", meta: "2 weeks ago", color: "#5435D0" },
-      { type: "text",  label: "Time blocking template", meta: "", color: "#010312" },
+      { type: "note", label: "Deep work session notes", meta: "2 weeks ago", color: "#5435D0" },
+      { type: "text", label: "Time blocking template", meta: "", color: "#010312" },
     ],
   },
   {
-    query: "morning routine ideas",
+    query: "my morning routine ideas",
     results: [
       { type: "image", label: "Screenshot — cold shower benefits", meta: "last week", color: "#5435D0" },
-      { type: "text",  label: "Hal Elrod SAVERS framework", meta: "", color: "#010312" },
+      { type: "text", label: "Hal Elrod SAVERS framework", meta: "", color: "#010312" },
     ],
   },
 ]
@@ -28,50 +28,50 @@ const SEARCHES = [
 const TYPE_ICONS = {
   voice: (
     <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-      <circle cx="6.5" cy="5" r="2.2" stroke="#5435D0" strokeWidth="1.4" fill="none"/>
-      <path d="M3 5.5C3 7.43 4.57 9 6.5 9S10 7.43 10 5.5" stroke="#5435D0" strokeWidth="1.4" strokeLinecap="round" fill="none"/>
-      <line x1="6.5" y1="9" x2="6.5" y2="11" stroke="#5435D0" strokeWidth="1.4" strokeLinecap="round"/>
-      <line x1="4.5" y1="11" x2="8.5" y2="11" stroke="#5435D0" strokeWidth="1.4" strokeLinecap="round"/>
+      <circle cx="6.5" cy="5" r="2.2" stroke="#5435D0" strokeWidth="1.4" fill="none" />
+      <path d="M3 5.5C3 7.43 4.57 9 6.5 9S10 7.43 10 5.5" stroke="#5435D0" strokeWidth="1.4" strokeLinecap="round" fill="none" />
+      <line x1="6.5" y1="9" x2="6.5" y2="11" stroke="#5435D0" strokeWidth="1.4" strokeLinecap="round" />
+      <line x1="4.5" y1="11" x2="8.5" y2="11" stroke="#5435D0" strokeWidth="1.4" strokeLinecap="round" />
     </svg>
   ),
   note: (
     <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-      <rect x="2" y="2" width="9" height="9" rx="2" stroke="#5435D0" strokeWidth="1.4" fill="none"/>
-      <line x1="4" y1="5" x2="9" y2="5" stroke="#5435D0" strokeWidth="1.2" strokeLinecap="round"/>
-      <line x1="4" y1="7.5" x2="7" y2="7.5" stroke="#5435D0" strokeWidth="1.2" strokeLinecap="round"/>
+      <rect x="2" y="2" width="9" height="9" rx="2" stroke="#5435D0" strokeWidth="1.4" fill="none" />
+      <line x1="4" y1="5" x2="9" y2="5" stroke="#5435D0" strokeWidth="1.2" strokeLinecap="round" />
+      <line x1="4" y1="7.5" x2="7" y2="7.5" stroke="#5435D0" strokeWidth="1.2" strokeLinecap="round" />
     </svg>
   ),
   image: (
     <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-      <rect x="1.5" y="2.5" width="10" height="8" rx="1.5" stroke="#5435D0" strokeWidth="1.4" fill="none"/>
-      <circle cx="4.5" cy="5.5" r="1" fill="#5435D0"/>
-      <path d="M1.5 9L4.5 6.5L7 8.5L9 7L11.5 9.5" stroke="#5435D0" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+      <rect x="1.5" y="2.5" width="10" height="8" rx="1.5" stroke="#5435D0" strokeWidth="1.4" fill="none" />
+      <circle cx="4.5" cy="5.5" r="1" fill="#5435D0" />
+      <path d="M1.5 9L4.5 6.5L7 8.5L9 7L11.5 9.5" stroke="#5435D0" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
     </svg>
   ),
   text: (
     <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-      <line x1="2" y1="4" x2="11" y2="4" stroke="#9CA3AF" strokeWidth="1.4" strokeLinecap="round"/>
-      <line x1="2" y1="6.5" x2="9" y2="6.5" stroke="#9CA3AF" strokeWidth="1.4" strokeLinecap="round"/>
-      <line x1="2" y1="9" x2="7" y2="9" stroke="#9CA3AF" strokeWidth="1.4" strokeLinecap="round"/>
+      <line x1="2" y1="4" x2="11" y2="4" stroke="#9CA3AF" strokeWidth="1.4" strokeLinecap="round" />
+      <line x1="2" y1="6.5" x2="9" y2="6.5" stroke="#9CA3AF" strokeWidth="1.4" strokeLinecap="round" />
+      <line x1="2" y1="9" x2="7" y2="9" stroke="#9CA3AF" strokeWidth="1.4" strokeLinecap="round" />
     </svg>
   ),
 }
 
 // Phases per cycle: typing → showing → clearing → (next)
-const CHAR_DELAY   = 55   // ms per character typed
-const SHOW_HOLD    = 1800 // ms results stay visible
-const CLEAR_DELAY  = 30   // ms per char deleted
+const CHAR_DELAY = 55   // ms per character typed
+const SHOW_HOLD = 1800 // ms results stay visible
+const CLEAR_DELAY = 30   // ms per char deleted
 
 export default function HybridSearchCard() {
-  const [hovered,       setHovered]       = useState(false)
-  const [searchIndex,   setSearchIndex]   = useState(0)
+  const [hovered, setHovered] = useState(false)
+  const [searchIndex, setSearchIndex] = useState(0)
   const [displayedText, setDisplayedText] = useState("")
-  const [showResults,   setShowResults]   = useState(false)
-  const [resultsKey,    setResultsKey]    = useState(0)
-  const [phase,         setPhase]         = useState("typing") // typing | holding | clearing
+  const [showResults, setShowResults] = useState(false)
+  const [resultsKey, setResultsKey] = useState(0)
+  const [phase, setPhase] = useState("typing") // typing | holding | clearing
 
   const timeoutRef = useRef(null)
-  const charRef    = useRef(0)
+  const charRef = useRef(0)
 
   const clear = () => { if (timeoutRef.current) clearTimeout(timeoutRef.current) }
 
@@ -144,7 +144,18 @@ export default function HybridSearchCard() {
         boxShadow: hovered ? "0 8px 32px rgba(84,53,208,0.10)" : "none",
       }}
     >
-      <div style={{ width: "44px", height: "44px", borderRadius: "12px", background: "rgba(84,53,208,0.08)" }} />
+
+      <div style={{
+        width: "44px", height: "44px", borderRadius: "12px", background: "rgba(84,53,208,0.08)", display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21.0002 21L16.6602 16.66" stroke="#3679FE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#3679FE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+      </div>
 
       <h3 style={{ fontFamily: fonts.body, fontWeight: 700, fontSize: "18px", color: "#010312", margin: 0 }}>
         Hybrid search
@@ -154,18 +165,16 @@ export default function HybridSearchCard() {
         Ask: <em>"what did I save about staying focused?"</em> and get results across your notes, voice memos, and bookmarks even if you never used the word "focus".
       </p>
 
-      {/* Search illustration */}
       <div style={{
         marginTop: "auto",
         borderRadius: "16px",
-        background: "#F8F9FC",
         padding: "20px 16px",
         display: "flex",
         flexDirection: "column",
-        gap: "0",
+        minHeight: "180px",
+        position: "relative",
       }}>
 
-        {/* Search box */}
         <div style={{
           background: "#FFFFFF",
           border: "1px solid #E2E8F0",
@@ -174,16 +183,15 @@ export default function HybridSearchCard() {
           display: "flex",
           alignItems: "center",
           gap: "10px",
+          zIndex: 2,
           transition: "border-radius 0.2s ease",
           boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
         }}>
-          {/* Search icon */}
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0 }}>
-            <circle cx="7" cy="7" r="4.5" stroke="#9CA3AF" strokeWidth="1.5" fill="none"/>
-            <line x1="10.5" y1="10.5" x2="14" y2="14" stroke="#9CA3AF" strokeWidth="1.5" strokeLinecap="round"/>
+            <circle cx="7" cy="7" r="4.5" stroke="#9CA3AF" strokeWidth="1.5" fill="none" />
+            <line x1="10.5" y1="10.5" x2="14" y2="14" stroke="#9CA3AF" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
 
-          {/* Animated text + cursor */}
           <span style={{
             fontFamily: fonts.body,
             fontSize: "14px",
@@ -205,7 +213,6 @@ export default function HybridSearchCard() {
             }} />
           </span>
 
-          {/* Clear button — only when there's text */}
           {displayedText.length > 0 && (
             <div style={{
               width: "20px", height: "20px",
@@ -215,15 +222,18 @@ export default function HybridSearchCard() {
               flexShrink: 0,
             }}>
               <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-                <line x1="1.5" y1="1.5" x2="6.5" y2="6.5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-                <line x1="6.5" y1="1.5" x2="1.5" y2="6.5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                <line x1="1.5" y1="1.5" x2="6.5" y2="6.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+                <line x1="6.5" y1="1.5" x2="1.5" y2="6.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
             </div>
           )}
         </div>
 
-        {/* Results dropdown */}
         <div style={{
+          position: "absolute",
+          top: "65px", // Adjust based on input height + top padding (20+45)
+          left: "16px",
+          right: "16px",
           background: "#FFFFFF",
           border: "1px solid #E2E8F0",
           borderTop: "none",
@@ -231,6 +241,7 @@ export default function HybridSearchCard() {
           overflow: "hidden",
           maxHeight: showResults ? "120px" : "0px",
           opacity: showResults ? 1 : 0,
+          zIndex: 1,
           transition: "max-height 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.25s ease",
           boxShadow: "0 4px 12px rgba(0,0,0,0.06)",
         }}>
@@ -257,16 +268,6 @@ export default function HybridSearchCard() {
               }}>
                 {r.label}
               </span>
-              {r.meta && (
-                <span style={{
-                  fontFamily: fonts.body,
-                  fontSize: "13px",
-                  fontWeight: 400,
-                  color: "#9CA3AF",
-                }}>
-                  {r.meta}
-                </span>
-              )}
             </div>
           ))}
         </div>

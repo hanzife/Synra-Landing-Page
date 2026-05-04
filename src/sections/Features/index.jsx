@@ -3,10 +3,12 @@ import SemanticCard from "../../components/ui/SemanticCard"
 import AutoLinkCard from "../../components/ui/AutoLinkCard"
 import HybridSearchCard from "../../components/ui/HybridSearchCard"
 import CrossTypeCard from "../../components/ui/CrossTypeCard"
+import AppCard from "../../components/ui/AppCard"
+
 
 export default function Features() {
     return (
-        <section style={{
+        <section id="features" style={{
             background: "#ffffff",
             padding: "100px 24px",
         }}>
@@ -57,6 +59,12 @@ export default function Features() {
                     </div>
                 </div>
 
+                <div style={{ ...row, marginTop: "16px" }} className="feat-row">
+                    <div style={{ ...col, flex: "1" }} className="feat-col">
+                        <AppCard />
+                    </div>
+                </div>
+                
             </div>
 
             <style>{`

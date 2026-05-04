@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from "react"
 import { fonts } from "../../tokens/tokens"
+import AliAbdaalImage from "../../assets/images/aliabdaal-video.png"
 
 export default function SemanticCard() {
   const [hovered, setHovered] = useState(false)
-  const canvasRef     = useRef(null)
-  const containerRef  = useRef(null)
-  const leftCardRef   = useRef(null)
-  const rightCardRef  = useRef(null)
-  const nodeBoxRef    = useRef(null)
+  const canvasRef = useRef(null)
+  const containerRef = useRef(null)
+  const leftCardRef = useRef(null)
+  const rightCardRef = useRef(null)
+  const nodeBoxRef = useRef(null)
 
   function diamond(ctx, x, y, size, alpha) {
     ctx.save()
@@ -21,22 +22,22 @@ export default function SemanticCard() {
   }
 
   const drawLines = () => {
-    const canvas    = canvasRef.current
+    const canvas = canvasRef.current
     const container = containerRef.current
-    const leftCard  = leftCardRef.current
+    const leftCard = leftCardRef.current
     const rightCard = rightCardRef.current
-    const nodeBox   = nodeBoxRef.current
+    const nodeBox = nodeBoxRef.current
     if (!canvas || !container || !leftCard || !rightCard || !nodeBox) return
 
-    const dpr   = window.devicePixelRatio || 1
+    const dpr = window.devicePixelRatio || 1
     const cRect = container.getBoundingClientRect()
     const lRect = leftCard.getBoundingClientRect()
     const rRect = rightCard.getBoundingClientRect()
     const nRect = nodeBox.getBoundingClientRect()
 
-    canvas.width        = cRect.width  * dpr
-    canvas.height       = cRect.height * dpr
-    canvas.style.width  = cRect.width  + "px"
+    canvas.width = cRect.width * dpr
+    canvas.height = cRect.height * dpr
+    canvas.style.width = cRect.width + "px"
     canvas.style.height = cRect.height + "px"
 
     const ctx = canvas.getContext("2d")
@@ -44,16 +45,16 @@ export default function SemanticCard() {
     ctx.clearRect(0, 0, cRect.width, cRect.height)
 
     // Anchor points (container-relative)
-    const lx   = lRect.right  - cRect.left
-    const ly   = lRect.top    + lRect.height / 2 - cRect.top
-    const rx   = rRect.left   - cRect.left
-    const ry   = rRect.top    + rRect.height / 2 - cRect.top
-    const nx_l = nRect.left   - cRect.left
-    const nx_r = nRect.right  - cRect.left
-    const ny   = nRect.top    + nRect.height / 2 - cRect.top
+    const lx = lRect.right - cRect.left
+    const ly = lRect.top + lRect.height / 2 - cRect.top
+    const rx = rRect.left - cRect.left
+    const ry = rRect.top + rRect.height / 2 - cRect.top
+    const nx_l = nRect.left - cRect.left
+    const nx_r = nRect.right - cRect.left
+    const ny = nRect.top + nRect.height / 2 - cRect.top
 
     ctx.setLineDash([5, 5])
-    ctx.lineWidth   = 1.5
+    ctx.lineWidth = 1.5
     ctx.strokeStyle = "rgba(84,53,208,0.5)"
 
     // Left S-curve: left card → left edge of center node
@@ -72,7 +73,7 @@ export default function SemanticCard() {
     ctx.moveTo(nx_r, ny)
     ctx.bezierCurveTo(
       nx_r + (rx - nx_r) * 0.4, ny,
-      rx   - (rx - nx_r) * 0.6, ry,
+      rx - (rx - nx_r) * 0.6, ry,
       rx, ry
     )
     ctx.stroke()
@@ -80,8 +81,8 @@ export default function SemanticCard() {
     ctx.setLineDash([])
 
     // Diamonds on all 4 connection points
-    diamond(ctx, lx,   ly, 9, 0.7)
-    diamond(ctx, rx,   ry, 9, 0.7)
+    diamond(ctx, lx, ly, 9, 0.7)
+    diamond(ctx, rx, ry, 9, 0.7)
     diamond(ctx, nx_l, ny, 8, 0.65)
     diamond(ctx, nx_r, ny, 8, 0.65)
   }
@@ -148,8 +149,14 @@ export default function SemanticCard() {
           }}
         >
           <div style={{
-            height: "88px", background: "linear-gradient(135deg, #1a1a2e, #16213e)",
-            position: "relative", display: "flex", alignItems: "center", justifyContent: "center",
+            height: "88px",
+            backgroundImage: `url(${AliAbdaalImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            position: "relative",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}>
             <div style={{
               position: "absolute", top: "8px", left: "8px", background: "#FF0000",
@@ -159,9 +166,7 @@ export default function SemanticCard() {
                 <path d="M2 1.5L6.5 4L2 6.5V1.5Z" fill="white" />
               </svg>
             </div>
-            <span style={{ fontFamily: fonts.body, fontWeight: 800, fontSize: "10px", color: "#FFE500", letterSpacing: "0.02em" }}>
-              4 HOURS A DAY
-            </span>
+           
           </div>
           <div style={{ padding: "10px 12px" }}>
             <p style={{ fontFamily: fonts.body, fontWeight: 700, fontSize: "13px", color: "#010312", margin: "0 0 2px" }}>Deep work</p>
@@ -241,8 +246,8 @@ export default function SemanticCard() {
           }}>
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <rect x="2" y="3" width="10" height="1.5" rx="0.75" fill="#F59E0B" />
-              <rect x="2" y="6" width="8"  height="1.5" rx="0.75" fill="#F59E0B" opacity="0.6" />
-              <rect x="2" y="9" width="6"  height="1.5" rx="0.75" fill="#F59E0B" opacity="0.4" />
+              <rect x="2" y="6" width="8" height="1.5" rx="0.75" fill="#F59E0B" opacity="0.6" />
+              <rect x="2" y="9" width="6" height="1.5" rx="0.75" fill="#F59E0B" opacity="0.4" />
             </svg>
           </div>
           <p style={{ fontFamily: "'Caveat', cursive", fontSize: "15px", lineHeight: 1.4, color: "#1a1a1a", margin: 0, fontWeight: 600 }}>

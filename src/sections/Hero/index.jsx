@@ -120,7 +120,7 @@ export default function Hero() {
                     </p>
 
                     <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
-                        <a href="#download"
+                          <a href="https://apps.apple.com/ma/app/synra-chat-with-your-memories/id6762082982"
                             style={{
                                 display: "inline-flex",
                                 alignItems: "center",
