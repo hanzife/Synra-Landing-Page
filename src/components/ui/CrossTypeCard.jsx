@@ -137,7 +137,7 @@ export default function CrossTypeCard() {
         <ItemCard delay={480} visible={visible} hovered={hovered} bg="#FFFFFF">
           <div style={{
             width: "100%",
-            height: "88px",
+            height: "64px",
             borderRadius: "6px",
             backgroundImage: `url(${StravaArticle})`,
             backgroundSize: "cover",
@@ -147,11 +147,11 @@ export default function CrossTypeCard() {
           }}>
             <div style={{
               position: "absolute",
-              top: "10px",
-              left: "10px",
+              top: "4px",
+              left: "4px",
               backgroundColor: "#FFFFFF",
               borderRadius: "12px",
-              padding: "6px 14px",
+              padding: "4px 8px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -160,7 +160,7 @@ export default function CrossTypeCard() {
               <span style={{
                 color: "#FC5200",
                 fontWeight: 800,
-                fontSize: "11px",
+                fontSize: "10px",
                 fontFamily: fonts.body,
                 letterSpacing: "0.02em"
               }}>

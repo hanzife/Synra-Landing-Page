@@ -25,7 +25,6 @@ export default function AutoLinkCard() {
         boxShadow: hovered ? "0 8px 32px rgba(45,212,191,0.10)" : "none",
       }}
     >
-      {/* Icon box */}
       <div style={{
         width: "44px",
         height: "44px",
@@ -53,24 +52,21 @@ export default function AutoLinkCard() {
         Every capture is automatically connected to related ones by meaning, not keyword. A living graph that grows smarter as you do.
       </p>
 
-      {/* Illustration */}
       <div
         ref={containerRef}
         style={{
           marginTop: "auto",
           minHeight: "220px",
           borderRadius: "16px",
-          background: "#F8F9FC",
+          //background: "#F8F9FC",
           position: "relative",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          padding: "24px 16px",
           gap: "8px",
         }}
       >
 
-        {/* Left: Podcast card */}
         <div style={{
           display: "flex",
           flexDirection: "column",
@@ -101,10 +97,6 @@ export default function AutoLinkCard() {
               padding: "10px",
             }}>
 
-
-
-
-
             </div>
           </div>
 
@@ -119,7 +111,6 @@ export default function AutoLinkCard() {
           </p>
         </div>
 
-        {/* Center: Similarity badge */}
         <div style={{
           display: "flex",
           flexDirection: "column",
@@ -158,7 +149,6 @@ export default function AutoLinkCard() {
           </div>
         </div>
 
-        {/* Right: Book card */}
         <div style={{
           display: "flex",
           flexDirection: "column",
@@ -190,8 +180,7 @@ export default function AutoLinkCard() {
             <div style={{
               position: "absolute",
               top: "12%",
-              left: "50%",
-              width: "46%",
+              width: "100%",
               height: "72%",
               display: "flex",
               flexDirection: "column",
@@ -208,7 +197,7 @@ export default function AutoLinkCard() {
                 margin: 0,
                 lineHeight: 1.35,
               }}>
-                Atomic<br />Habits – Ch. 4
+                Atomic Habits <br />– Ch. 4
               </p>
               <div style={{
                 background: "#EAB308",

@@ -275,7 +275,7 @@ export default function KnowledgeGraph() {
           fontSize: "17px",
           lineHeight: 1.7,
           color: "#2D3B6B",
-          maxWidth: "480px",
+          maxWidth: "560px",
           margin: "0 auto",
         }}>
           Every capture is automatically connected to related ones by meaning,

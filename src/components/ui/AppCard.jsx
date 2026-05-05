@@ -45,7 +45,7 @@ export default function AppCard() {
                     background: "#FFFFFF",
                     border: "1px solid #DDE3ED",
                     borderRadius: "20px",
-                    padding: "40px 0px 0px 48px",
+                    padding: "0px 0px 0px 32px",
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
@@ -54,11 +54,13 @@ export default function AppCard() {
                     overflow: "hidden",
                     position: "relative",
                     minHeight: "280px",
+
                 }}
             >
-                <div className="app-card-text" style={{ flex: "0 0 auto", maxWidth: "360px", zIndex: 2 }}>
+                <div className="app-card-text" style={{ flex: "0 0 auto", maxWidth: "360px", paddingTop: "30px", zIndex: 2 }}>
 
                     <div style={{
+                        
                         display: "inline-flex",
                         alignItems: "center",
                         gap: "6px",
@@ -67,6 +69,7 @@ export default function AppCard() {
                         background: "rgba(84,53,208,0.06)",
                         border: "1px solid rgba(84,53,208,0.12)",
                         marginBottom: "16px",
+
                     }}>
                         <div style={{
                             width: "5px", height: "5px", borderRadius: "50%",
@@ -101,7 +104,7 @@ export default function AppCard() {
                         Capture thoughts the moment they happen. Voice, text, photo, or link — enriched instantly.
                     </p>
 
-                    <a href="https://apps.apple.com" style={{
+                    <a href="https://apps.apple.com/ma/app/synra-chat-with-your-memories/id6762082982" style={{
                         display: "inline-flex",
                         alignItems: "center",
                         gap: "8px",

@@ -109,9 +109,11 @@ export default function SemanticCard() {
         boxShadow: hovered ? "0 8px 32px rgba(84,53,208,0.10)" : "none",
       }}
     >
-      <div style={{ width: "44px", height: "44px", borderRadius: "12px", background: "rgba(84,53,208,0.08)",   display: "flex",
-  alignItems: "center",
-  justifyContent: "center" }}>
+      <div style={{
+        width: "44px", height: "44px", borderRadius: "12px", background: "rgba(84,53,208,0.08)", display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+      }}>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M9 3H5C3.89543 3 3 3.89543 3 5V9C3 10.1046 3.89543 11 5 11H9C10.1046 11 11 10.1046 11 9V5C11 3.89543 10.1046 3 9 3Z" stroke="#987AFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M7 11V15C7 15.5304 7.21071 16.0391 7.58579 16.4142C7.96086 16.7893 8.46957 17 9 17H13" stroke="#987AFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -123,7 +125,7 @@ export default function SemanticCard() {
         Semantic connections
       </h3>
 
-      <p style={{ fontFamily: fonts.body, fontSize: "14px", lineHeight: 1.6, color: "#2D3B6B", margin: 0, maxWidth: "360px",}}>
+      <p style={{ fontFamily: fonts.body, fontSize: "14px", lineHeight: 1.6, color: "#2D3B6B", margin: 0, maxWidth: "360px", }}>
         Save a video about deep work and Synra links it to your note on time-blocking. because they mean the same thing, even if the words differ.
       </p>
 
@@ -132,9 +134,10 @@ export default function SemanticCard() {
         ref={containerRef}
         style={{
           marginTop: "auto", minHeight: "210px", borderRadius: "16px",
-          background: "#F8F9FC", position: "relative",
+          //background: "#F8F9FC",
+           position: "relative",
           display: "flex", alignItems: "center",
-          justifyContent: "space-between", padding: "20px 16px",
+          justifyContent: "space-between", 
         }}
       >
 
@@ -144,7 +147,7 @@ export default function SemanticCard() {
         <div
           ref={leftCardRef}
           style={{
-            width: "150px", borderRadius: "14px", background: "#FFFFFF",
+            width: "168px", borderRadius: "14px", background: "#FFFFFF",
             border: "1px solid #E8ECF2", overflow: "hidden", flexShrink: 0,
             transform: hovered ? "translateY(-4px)" : "translateY(0)",
             transition: "transform 0.35s cubic-bezier(0.34,1.56,0.64,1)",
@@ -185,7 +188,6 @@ export default function SemanticCard() {
             alignItems: "center", gap: 0,
           }}
         >
-          {/* Semantic match pill */}
           <div style={{
             background: "white", border: "1px solid #E8ECF2",
             borderRadius: "999px", padding: "5px 14px",
@@ -196,13 +198,11 @@ export default function SemanticCard() {
             semantic match
           </div>
 
-          {/* Dashed stem */}
           <div style={{
             width: "1px", height: "10px",
             borderLeft: "1.5px dashed rgba(84,53,208,0.35)",
           }} />
 
-          {/* Top diamond connector */}
           <div style={{
             width: "8px", height: "8px",
             background: "rgba(84,53,208,0.7)",
@@ -211,7 +211,6 @@ export default function SemanticCard() {
             position: "relative", zIndex: 4,
           }} />
 
-          {/* Node */}
           <div
             ref={nodeBoxRef}
             style={{
@@ -230,11 +229,10 @@ export default function SemanticCard() {
           </div>
         </div>
 
-        {/* Right: Sticky note */}
         <div
           ref={rightCardRef}
           style={{
-            width: "140px", borderRadius: "14px", background: "#FEF7A0",
+            width: "168px", borderRadius: "14px", background: "#FEF7A0",
             padding: "12px", flexShrink: 0,
             transform: hovered ? "translateY(-4px)" : "translateY(0)",
             transition: "transform 0.35s cubic-bezier(0.34,1.56,0.64,1) 0.05s",
