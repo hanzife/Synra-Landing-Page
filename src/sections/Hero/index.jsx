@@ -1,7 +1,12 @@
 import { useEffect, useRef } from "react"
 import { fonts } from "../../tokens/tokens"
-import phoneMockup from "../../assets/phone-mockup.png"
 import heroBg from "../../assets/hero-bg.png"
+
+import phoneMockup from "../../assets/phone-mockup.png"
+import PhoneMockupCards from "../../components/ui/PhoneMockupCards.jsx"
+
+
+
 
 export default function Hero() {
     const phoneRef = useRef(null)
@@ -179,27 +184,16 @@ export default function Hero() {
                     </p>
                 </div>
 
-                <div className="hero-phone " style={{ flex: "0 0 auto", display: "flex", justifyContent: "center" }}>
-                    <div
-                        ref={phoneRef}
+
+                <div className="hero-phone" ref={phoneRef}
                         style={{
                             transition: "transform 0.12s ease-out",
                             willChange: "transform",
                             transformStyle: "preserve-3d",
-                        }}
-                    >
-                        <img
-                            src={phoneMockup}
-                            alt="Synra app"
-                            style={{
-                                width: "clamp(20px, 17vw, 320px)",
-                                height: "auto",
-                                display: "block",
-                                filter: "drop-shadow(0 40px 60px rgba(4,2,18,0.18)) drop-shadow(0 8px 24px rgba(84,53,208,0.2))",
-                            }}
-                        />
-                    </div>
+                        }}>
+                    <PhoneMockupCards />
                 </div>
+
 
             </div>
 

@@ -78,7 +78,7 @@ export default function CrossTypeCard() {
       <p
         style={{
           fontFamily: fonts.body,
-          maxWidth: "340px",
+          maxWidth: "360px",
           fontSize: fontSizes.sm,
           lineHeight: 1.6,
           color: "#2D3B6B",
@@ -96,10 +96,15 @@ export default function CrossTypeCard() {
           alignItems: "center",
           justifyContent: "space-between",
           gap: "6px",
+          width: "100%",
+          overflowX: "auto",
+          paddingBottom: "8px",
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
         }}
       >
 
-        <ItemCard delay={0} visible={visible} hovered={hovered} bg="#DBEAFE">
+        <ItemCard delay={0} visible={visible} hovered={hovered} bg="#EAE7F9">
           <div style={{ transform: 'scale(0.8)' }}><WaveformIllustration /></div>
           <Label>Voice</Label>
         </ItemCard>
@@ -133,7 +138,7 @@ export default function CrossTypeCard() {
           <div style={{
             width: "100%",
             height: "88px",
-            borderRadius: "6px", 
+            borderRadius: "6px",
             backgroundImage: `url(${StravaArticle})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
@@ -207,6 +212,7 @@ function ItemCard({ children, delay, visible, hovered, bg, isImage = false }) {
 
   return (
     <div style={{
+      flexShrink: 0, 
       width: "120px",
       height: "120px",
       borderRadius: "12px",
@@ -282,41 +288,20 @@ function Label({ children }) {
 }
 
 function WaveformIllustration() {
-  const bars = [
-    3,
-    6,
-    10,
-    14,
-    18,
-    22,
-    26,
-    30,
-    26,
-    22,
-    18,
-    22,
-    26,
-    22,
-    18,
-    14,
-    10,
-    6,
-    3,
-  ]
+
   return (
-    <svg width="80" height="44" viewBox="0 0 80 44" fill="none">
-      {bars.map((h, i) => (
-        <rect
-          key={i}
-          x={4 + i * 4}
-          y={(44 - h) / 2}
-          width="2.5"
-          height={h}
-          rx="1.25"
-          fill={`rgba(37,99,235,${0.4 + (h / 30) * 0.6})`}
-        />
-      ))}
+    <svg width="80" height="70" viewBox="0 0 121 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="27.8164" width="9.73563" height="69.5402" rx="4.86782" fill="#5435D0" />
+      <rect x="83.4492" width="9.73563" height="69.5402" rx="4.86782" fill="#5435D0" />
+      <rect x="13.9082" y="9.73572" width="9.73563" height="50.069" rx="4.86782" fill="#5435D0" />
+      <rect x="41.7246" y="9.73572" width="9.73563" height="50.069" rx="4.86782" fill="#5435D0" />
+      <rect x="69.541" y="9.73572" width="9.73563" height="50.069" rx="4.86782" fill="#5435D0" />
+      <rect x="97.3555" y="9.73572" width="9.73563" height="50.069" rx="4.86782" fill="#5435D0" />
+      <rect y="22.2529" width="9.73563" height="25.0345" rx="4.86782" fill="#5435D0" />
+      <rect x="55.6328" y="22.2529" width="9.73563" height="25.0345" rx="4.86782" fill="#5435D0" />
+      <rect x="111.264" y="22.2529" width="9.73563" height="25.0345" rx="4.86782" fill="#5435D0" />
     </svg>
+
   )
 }
 

@@ -72,6 +72,10 @@ export default function Features() {
           .feat-row { flex-direction: column !important; }
           .feat-col { flex: 0 0 100% !important; width: 100% !important; }
         }
+          @media (max-width: 1024px) {
+        .feat-row { flex-direction: column !important; }
+        .feat-col { flex: 0 0 100% !important; width: 100% !important; }
+    }
       `}</style>
         </section>
     )

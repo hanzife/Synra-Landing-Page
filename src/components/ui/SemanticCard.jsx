@@ -44,7 +44,6 @@ export default function SemanticCard() {
     ctx.scale(dpr, dpr)
     ctx.clearRect(0, 0, cRect.width, cRect.height)
 
-    // Anchor points (container-relative)
     const lx = lRect.right - cRect.left
     const ly = lRect.top + lRect.height / 2 - cRect.top
     const rx = rRect.left - cRect.left
@@ -57,7 +56,6 @@ export default function SemanticCard() {
     ctx.lineWidth = 1.5
     ctx.strokeStyle = "rgba(84,53,208,0.5)"
 
-    // Left S-curve: left card → left edge of center node
     const midX_l = (lx + nx_l) / 2
     ctx.beginPath()
     ctx.moveTo(lx, ly)
@@ -68,7 +66,6 @@ export default function SemanticCard() {
     )
     ctx.stroke()
 
-    // Right S-curve: right edge of center node → right card
     ctx.beginPath()
     ctx.moveTo(nx_r, ny)
     ctx.bezierCurveTo(
@@ -80,7 +77,6 @@ export default function SemanticCard() {
 
     ctx.setLineDash([])
 
-    // Diamonds on all 4 connection points
     diamond(ctx, lx, ly, 9, 0.7)
     diamond(ctx, rx, ry, 9, 0.7)
     diamond(ctx, nx_l, ny, 8, 0.65)
@@ -96,7 +92,6 @@ export default function SemanticCard() {
     }
   }, [])
 
-  // Redraw when hover state changes (node glow shifts bounding box slightly)
   useEffect(() => {
     drawLines()
   }, [hovered])
@@ -114,17 +109,25 @@ export default function SemanticCard() {
         boxShadow: hovered ? "0 8px 32px rgba(84,53,208,0.10)" : "none",
       }}
     >
-      <div style={{ width: "44px", height: "44px", borderRadius: "12px", background: "rgba(84,53,208,0.08)" }} />
+      <div style={{ width: "44px", height: "44px", borderRadius: "12px", background: "rgba(84,53,208,0.08)",   display: "flex",
+  alignItems: "center",
+  justifyContent: "center" }}>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 3H5C3.89543 3 3 3.89543 3 5V9C3 10.1046 3.89543 11 5 11H9C10.1046 11 11 10.1046 11 9V5C11 3.89543 10.1046 3 9 3Z" stroke="#987AFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M7 11V15C7 15.5304 7.21071 16.0391 7.58579 16.4142C7.96086 16.7893 8.46957 17 9 17H13" stroke="#987AFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M19 13H15C13.8954 13 13 13.8954 13 15V19C13 20.1046 13.8954 21 15 21H19C20.1046 21 21 20.1046 21 19V15C21 13.8954 20.1046 13 19 13Z" stroke="#987AFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
 
+      </div>
       <h3 style={{ fontFamily: fonts.body, fontWeight: 700, fontSize: "18px", color: "#010312", margin: 0 }}>
         Semantic connections
       </h3>
 
-      <p style={{ fontFamily: fonts.body, fontSize: "14px", lineHeight: 1.6, color: "#2D3B6B", margin: 0 }}>
-        Save a video about deep work and Synra links it to your note on time-blocking — because they mean the same thing, even if the words differ.
+      <p style={{ fontFamily: fonts.body, fontSize: "14px", lineHeight: 1.6, color: "#2D3B6B", margin: 0, maxWidth: "360px",}}>
+        Save a video about deep work and Synra links it to your note on time-blocking. because they mean the same thing, even if the words differ.
       </p>
 
-      {/* Illustration */}
+
       <div
         ref={containerRef}
         style={{
@@ -134,10 +137,10 @@ export default function SemanticCard() {
           justifyContent: "space-between", padding: "20px 16px",
         }}
       >
-        {/* Canvas — sits behind everything */}
+
         <canvas ref={canvasRef} style={{ position: "absolute", inset: 0, zIndex: 1, pointerEvents: "none" }} />
 
-        {/* Left: Video card */}
+
         <div
           ref={leftCardRef}
           style={{
@@ -166,7 +169,7 @@ export default function SemanticCard() {
                 <path d="M2 1.5L6.5 4L2 6.5V1.5Z" fill="white" />
               </svg>
             </div>
-           
+
           </div>
           <div style={{ padding: "10px 12px" }}>
             <p style={{ fontFamily: fonts.body, fontWeight: 700, fontSize: "13px", color: "#010312", margin: "0 0 2px" }}>Deep work</p>
@@ -174,7 +177,6 @@ export default function SemanticCard() {
           </div>
         </div>
 
-        {/* Center: Synra node */}
         <div
           style={{
             position: "absolute", left: "50%", top: "50%",
