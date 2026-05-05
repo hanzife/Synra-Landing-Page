@@ -29,7 +29,7 @@ export default function Hero() {
     }, [])
 
     return (
-        <section style={{
+        <section className="hero-section" style={{
             position: "relative",
             height: "100vh",
             maxHeight: window.innerWidth >= 1440 ? "840px" : "100vh",
@@ -51,7 +51,7 @@ export default function Hero() {
                 zIndex: 0,
             }} />
 
-            <div style={{
+            <div className="hero-overlay" style={{
                 position: "absolute",
                 inset: 0,
                 background: "linear-gradient(to right, #F2F6F9 30%, rgba(242,246,249,0.85) 50%, rgba(242,246,249,0.2) 70%, transparent 100%)",
@@ -120,7 +120,7 @@ export default function Hero() {
                     </p>
 
                     <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
-                          <a href="https://apps.apple.com/ma/app/synra-chat-with-your-memories/id6762082982"
+                        <a href="https://apps.apple.com/ma/app/synra-chat-with-your-memories/id6762082982"
                             style={{
                                 display: "inline-flex",
                                 alignItems: "center",
@@ -210,7 +210,24 @@ export default function Hero() {
         }
         @media (max-width: 768px) {
           .hero-inner { flex-direction: column !important; text-align: center; }
-          .hero-inner img { width: 75vw !important; }
+  .hero-inner img { width: 300px !important; }
+
+           .hero-overlay {
+    background: linear-gradient(to bottom, #F2F6F9 40%, rgba(242,246,249,0.85) 60%, rgba(242,246,249,0.2) 80%, transparent 100%) !important;
+  }
+ .hero-inner { 
+    flex-direction: column !important;
+    text-align: center;
+  }
+  .hero-inner .hero-text { order: 1; }
+  .hero-inner .hero-phone { order: 2; }
+
+           .hero-section {
+    height: auto !important;
+    min-height: fit-content !important;
+    padding-top: 100px !important;
+    padding-bottom: 60px !important;
+  }
         }
       `}</style>
         </section>
