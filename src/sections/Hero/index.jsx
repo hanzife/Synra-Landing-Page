@@ -106,7 +106,7 @@ export default function Hero() {
                         </span>
                     </h1>
 
-                    <p style={{
+                    <p className="hero-text" style={{
                         fontFamily: fonts.body,
                         fontSize: "17px",
                         lineHeight: 1.7,
@@ -119,7 +119,7 @@ export default function Hero() {
                         actually talk to.
                     </p>
 
-                    <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
+                    <div className="hero-buttons" style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
                         <a href="https://apps.apple.com/ma/app/synra-chat-with-your-memories/id6762082982"
                             style={{
                                 display: "inline-flex",
@@ -179,7 +179,7 @@ export default function Hero() {
                     </p>
                 </div>
 
-                <div style={{ flex: "0 0 auto", display: "flex", justifyContent: "center" }}>
+                <div className="hero-phone " style={{ flex: "0 0 auto", display: "flex", justifyContent: "center" }}>
                     <div
                         ref={phoneRef}
                         style={{
@@ -221,6 +221,52 @@ export default function Hero() {
   }
   .hero-inner .hero-text { order: 1; }
   .hero-inner .hero-phone { order: 2; }
+
+
+   .hero-section {
+    height: auto !important;
+    min-height: fit-content !important;
+    padding: 100px 24px 60px !important;
+  }
+
+  .hero-inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 32px !important;
+  }
+
+  .hero-text {
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .hero-text p {
+    text-align: center !important;
+  }
+
+  .hero-buttons {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .hero-phone { 
+    order: 2;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .hero-inner img { 
+    width: 300px !important; 
+  }
+
+  
+   .hero-phone {
+    margin-top: 62px !important;
+  }
 
            .hero-section {
     height: auto !important;
